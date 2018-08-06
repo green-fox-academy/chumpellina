@@ -1,16 +1,22 @@
 body {padding-left: 10%; padding-right: 10%; 
       text-align: center; 
       font-family: 'Courier New', Courier, monospace; 
-      background:''; 
-    }
+      background: url('topography.png');}
+    
 
 @font-face { 
     font-family: 'Merriweather-Black';
     src:'teaching-materials/workshop/first-website/aperture.svg';
 }
 h1 {font-family: 'Merriweather-Black'}
-a {background-color: #333333;}
+a {background-color: #333333;
+text-align: right;
+padding-left: 100%;
+display: inline;}
 a, h2 {color: #ff0099;}
+h1, h2, p {text-align: left}
+.blabla {text-align: center};
+
 
 
 
