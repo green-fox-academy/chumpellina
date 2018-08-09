@@ -8,7 +8,7 @@ public class PurpleStepsThreeD {
     public static void mainDraw(Graphics graphics) {
         for (int i = 0; i < 6; i++) {
             graphics.setColor(Color.MAGENTA);
-            graphics.fillRect(10 * (i), 10 * (i), 10 * (i+1), 10 * (i+1));
+            graphics.fillRect(10 * (i-1), 10 * (i-1), 10 * (i+1), 10 * (i+1));
 
         }
     }

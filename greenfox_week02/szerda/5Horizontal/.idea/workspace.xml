@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc8da182-615c-459c-90cd-ba204cb602bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12PurpleSteps3D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../12PurpleSteps3D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12PurpleSteps3D/out/production/12PurpleSteps3D/PurpleStepsThreeD.class" beforeDir="false" afterPath="$PROJECT_DIR$/../12PurpleSteps3D/out/production/12PurpleSteps3D/PurpleStepsThreeD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12PurpleSteps3D/src/PurpleStepsThreeD.java" beforeDir="false" afterPath="$PROJECT_DIR$/../12PurpleSteps3D/src/PurpleStepsThreeD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7FourRectangles/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../7FourRectangles/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,6 +53,15 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1571076014">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -57,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/Horizontal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="183">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+              <caret line="17" column="9" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +120,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,8 +136,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,17 +187,18 @@
       <updated>1533726714152</updated>
       <workItem from="1533726720375" duration="1434000" />
       <workItem from="1533729445887" duration="382000" />
+      <workItem from="1533824052057" duration="483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1816000" />
+    <option name="totallyTimeSpent" value="2299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="25" width="1350" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25348836" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25736433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -225,7 +238,7 @@
     <entry file="file://$PROJECT_DIR$/src/Horizontal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <caret line="17" column="9" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
