@@ -2,13 +2,18 @@ public class Sharpie {
     String color;
     float width;
     float inkAmout =100;
-    public Sharpie (String color, float width, float inkAmout){
+    public Sharpie (String color, float width){
         this.color= color;
         this.width = width;
-        this.inkAmout = inkAmout-1;
+        this.inkAmout = inkAmout;
     }
+
+    public Float use (Float inkAmout){
+        return this.inkAmout = inkAmout-1;
+    }
+
     public String toString (){
-        return "the sharpies color is: " + this.color + '\n' + "the sharpies width is: " + width + '\n' + "the sharpies inkAmount is: " + inkAmout;
+        return "the sharpies color is: " + this.color + '\n' + "the sharpies width is: " + width + '\n' + "the sharpies inkAmount is: " + use(inkAmout);
     }
 
 }
