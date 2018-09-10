@@ -11,7 +11,7 @@ public class MarvelHero extends Hero {
     @Override
     public void punch(Punchable other) {
         if (getMotivationLevel() >= 1 && other.getClass() == DCHero.class) {
-            other.bePunched(getDamage());
+            other.bePunched(motivation / 1.5);
         }
     }
 

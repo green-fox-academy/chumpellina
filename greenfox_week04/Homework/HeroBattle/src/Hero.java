@@ -1,6 +1,5 @@
 public class Hero extends BaseHero implements Punchable {
-    private int motivation;
-    private double damage = motivation / 1.5;
+    protected int motivation;
 
     Hero(String name, int motivation) {
         super(name);
@@ -15,15 +14,13 @@ public class Hero extends BaseHero implements Punchable {
         this.motivation = motivation;
     }
 
-    public double getDamage() {
-        return damage;
-    }
+
 
 
     @Override
     public void punch(Punchable other) {
         if (getMotivationLevel() >= 1) {
-            other.bePunched(damage);
+            other.bePunched(motivation / 1.5);
         }
     }
 
