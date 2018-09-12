@@ -1,0 +1,62 @@
+body {
+    background-color: gainsboro;
+    height: 400px;
+    color: darkgray;
+    width: 400px;
+    margin-left: 300px;
+}
+
+input[type = "text"],
+input[type = "password"] {
+    display: block;
+    padding: 10px 160px 10px 10px;
+
+}
+input[type = "text"] {
+    border-color: darkgreen;
+    border-width: 1px;
+}
+
+input[type = "password"]{
+   background: url(eye.jpg)no-repeat;
+    background-position: right;
+
+}
+
+
+form {
+    background-color: white;
+    padding: 30px;
+}
+
+h1 {
+    font-family: Verdana;
+    font-size: 20px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+p {
+    text-align: right;
+    font-size:10px;
+    font-family: Tahoma
+}
+
+label {
+    text-align: left;
+    font-family: Verdana;
+    font-size: 10px;
+}
+button {
+    align: center;
+    padding: 10px 50px 10px 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: dimgrey;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 30px;
+    color: white;
+    font-size: 10px;
+    font-family: Arial;
+}
