@@ -1,0 +1,21 @@
+body {background-color: blue;}
+tbody, thead {border-radius: 10px;}
+table {text-align: left;
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 50px 300px;
+    border-color: darkgray;}
+th {background-color: black;
+    color: gainsboro;
+    font-family: verdana;
+    border-bottom-width: 6px;
+    padding-bottom: 30px; padding-right: 250px; padding-top: 30px; padding-left: 20px}
+td  {padding-bottom: 30px; padding-right: 250px; padding-top: 30px; padding-left: 20px;
+    border-width: 1px;
+    border-color: darkgray;
+    font-family: Verdana;
+color: dimgrey}
+tr:nth-child(even) {background-color: azure;
+    color: darkgrey;}
+tr:nth-child(odd) {background-color: gainsboro;
+    color: darkgrey;}
