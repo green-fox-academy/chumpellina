@@ -1,44 +1,40 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        ReadInTodoList toDoList = new ReadInTodoList();
         TaskManipulations listToManipulate = new TaskManipulations();
-        Task newTask = new Task(0, "Feed the monkey!", false);
+        //Task newTask = new Task();
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        String[] inputParts = input.split(" ");
+        String[] inputParts = input.split(";");
 
 
-
-        if (inputParts[0] == null) {
+      if (inputParts[0].equals(null)) {
             printUsage();
         }
 
-        if (inputParts[0] == "l") {
-
-            if (toDoList == null) {
-                System.out.println("No todos for today! :)");
-            } else
-                listToManipulate.listTasks();
+        if (inputParts[0].equals("l")) {
+            listToManipulate.listTasks();
         }
 
-        if (inputParts[0] == "a") {
-            listToManipulate.addToList(newTask);
+        if (inputParts[0].equals("a")) {
+            listToManipulate.addToList(inputParts[1]);
         }
 
-        if (inputParts[0] == "r") {
+      if (inputParts[0].equals("r")) {
             int removeId = Integer.parseInt(inputParts[1]);
             listToManipulate.remove(removeId);
         }
 
-        if (inputParts[0] == "c") {
+       if (inputParts[0].equals("c")) {
             int checkId = Integer.parseInt(inputParts[1]);
-            listToManipulate.check(checkId);
+            listToManipulate.setToCompleted(checkId);
+            //newTask.completionTime(newTask.getCreatedAt(), newTask.getCompletedAt());
         }
-
+        System.out.println(listToManipulate.printer());
     }
 
     public static void printUsage() {
@@ -52,5 +48,7 @@ public class Main {
                 " -c   Completes an task");
     }
 
-    ;
-}
+
+    }
+
+

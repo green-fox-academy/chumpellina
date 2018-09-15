@@ -1,60 +1,71 @@
+import java.security.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskManipulations {
+import static java.time.temporal.ChronoUnit.HOURS;
 
-    List <Task> myToDoList = new ArrayList<>();
-    Task task = new Task(0, "blabla", false);
+public class TaskManipulations {
+    ReadInTodoList toDoList = new ReadInTodoList();
+    Task task = new Task();
+    List<Task> taskList = toDoList.myToDoList();
+    FileWriter fileWriter = new FileWriter();
 
 // TASKOK LISTÁZÁSA
 
 
     public void listTasks() {
-        List<Task> printList = new ArrayList<>();
-        for (int i = 0; i < myToDoList.size(); i++) {
-            printList.add(myToDoList.get(i));
+        if (taskList.size() == 0) {
+            System.out.println("No todos today :)");
         }
-        System.out.println(printList);
+        taskList.stream().forEach(task -> System.out.println(task));
     }
-
     // TASKOK HOZZÁADÁSA
 
-    public void addToList(Task newTask) {
+    public void addToList(String arg) {
+
         int maxId = 0;
-        for (int i = 0; i < myToDoList.size(); i++) {
-            while (myToDoList.get(i).getId() > maxId) {
-                maxId = myToDoList.get(i).getId();
+        for (int i = 0; i < taskList.size(); i++) {
+            if (taskList.get(i).getId() > maxId) {
+                maxId = taskList.get(i).getId();
             }
         }
-        newTask.setId(maxId);
-        newTask.setCompleted(false);
-        myToDoList.add(newTask);
-
+        task = new Task(maxId+1, arg, false);
+        taskList.add(task);
+        //task.setCreatedAt();
     }
 
-    // TASKOK TÖRLÉSE
+  // TASKOK TÖRLÉSE
 
     public void remove(int id) {
-        myToDoList.remove(myToDoList.get(id));
+
+        taskList.remove(taskList.get(id));
     }
 
     // TASKOK ELVÉGZETT-JELZÉSE
 
 
-
-    public String check(int id) {
-        return String.format("%s - [%s] %s", task.getId(), signAsCompleted(), task.getTaskContent());
+    public void setToCompleted(int id) {
+        taskList.get(id).setCompleted(true);
+        taskList.get(id).setComplatedAt();
     }
 
-    private String signAsCompleted() {
-        if (task.getIsCompleted()== true) {
-            return "X";
+    // TASK-LISTA ELMETÉSE
+    private void save(List<Task> tasks) {
+        fileWriter.
+
+    }
+
+
+    // LISTA KIPRINTELŐJE
+
+    public List <String> printer() {
+        List <String> listOfTasks = new ArrayList<>();
+        for (int i = 0; i < taskList.size(); i++) {
+           listOfTasks.add (String.format("%s - [%s] %s", taskList.get(i).getId(), taskList.get(i).getisCompleted(), taskList.get(i).getTaskContent()));
         }
-
-        return " ";
+        return listOfTasks;
+    }
     }
 
-    private void setToCompleted(Task task) {
-        task.setCompleted(true);
-    }
-}
+
