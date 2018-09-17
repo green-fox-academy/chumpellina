@@ -2,10 +2,13 @@ package com.greenfoxacademy.helloworld.controllers;
 
 import org.springframework.stereotype.Controller;
 
+import java.util.Scanner;
+
 
 public class Greeting {
     private long id;
     private String content;
+
 
     public long getId() {
         return id;
@@ -17,6 +20,6 @@ public class Greeting {
 
     public Greeting(long id, String content) {
         this.id = 1;
-        this.content = "Hello World";
+        this.content = content;
     }
 }
