@@ -1,8 +1,8 @@
 package com.greenfoxacademy.helloworld.controllers;
 
 import org.springframework.stereotype.Controller;
-
-import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 public class Greeting {
@@ -11,15 +11,17 @@ public class Greeting {
 
 
     public long getId() {
-        return id;
+       return id;
     }
 
     public String getContent() {
         return content;
     }
 
-    public Greeting(long id, String content) {
-        this.id = 1;
+   public Greeting(long id, String content) {
+        this.id = id;
         this.content = content;
     }
+
+
 }
