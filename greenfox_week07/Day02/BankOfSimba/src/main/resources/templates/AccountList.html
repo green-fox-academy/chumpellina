@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bank of Simba</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,17 +16,26 @@
         <th> Name </th>
         <th> Balance </th>
         <th> Animal Type </th>
+        <th> Is king? </th>
     </tr>
     </thead>
 
     <tbody>
     <th:block th:each = "element : ${list}">
-    <tr>
+    <tr th:if = ${element.king} class = "king" >
         <td th:text="${elementStat.index}"> </td>
         <td th:text="${element.name}"> </td>
         <td th:text=" ${element.balance}"></td>
         <td th:text=" ${element.animalType}"></td>
+        <td th:text=" ${element.king}"></td>
     </tr>
+        <tr th:unless = ${element.getKing()}>
+            <td th:text="${elementStat.index}"> </td>
+            <td th:text="${element.name}"> </td>
+            <td th:text=" ${element.balance}"></td>
+            <td th:text=" ${element.animalType}"></td>
+            <td th:text=" ${element.king}"></td>
+        </tr>
     </th:block>
     </tbody>
 

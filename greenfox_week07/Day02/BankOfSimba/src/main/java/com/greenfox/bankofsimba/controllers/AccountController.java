@@ -14,7 +14,7 @@ public class AccountController {
 
     @RequestMapping("/show")
     public String bankAccount(Model model) {
-        BankAccount account = new BankAccount("Simba", 2000.00, "lion");
+        BankAccount account = new BankAccount("Simba", 2000.00, "lion", false);
         model.addAttribute("name", account.getName());
         model.addAttribute("balance", account.getBalance());
         model.addAttribute("animalType", account.getAnimalType());
@@ -31,10 +31,10 @@ public class AccountController {
     @RequestMapping("/list")
     public String accountLister (Model model) {
         List<BankAccount> accounts = new ArrayList<>();
-        accounts.add(new BankAccount("Timon", 1000.00, "suricate"));
-        accounts.add (new BankAccount("Pumba", 2000.00, "warthog"));
-        accounts.add (new BankAccount("Mufasa", 3000.00, "lion"));
-        accounts.add (new BankAccount("Nala", 4000.00, "lion"));
+        accounts.add(new BankAccount("Timon", 1000.00, "suricate", false));
+        accounts.add (new BankAccount("Pumba", 2000.00, "warthog", false));
+        accounts.add (new BankAccount("Mufasa", 3000.00, "lion", true));
+        accounts.add (new BankAccount("Nala", 4000.00, "lion", false));
         model.addAttribute("list", accounts);
 
         return "AccountList";
