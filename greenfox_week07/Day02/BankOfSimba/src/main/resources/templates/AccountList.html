@@ -11,6 +11,7 @@
 <table BORDER=2 FRAME=VOID RULES=ALL>
     <thead>
     <tr>
+        <th> Index </th>
         <th> Name </th>
         <th> Balance </th>
         <th> Animal Type </th>
@@ -20,6 +21,7 @@
     <tbody>
     <th:block th:each = "element : ${list}">
     <tr>
+        <td th:text="${elementStat.index}"> </td>
         <td th:text="${element.name}"> </td>
         <td th:text=" ${element.balance}"></td>
         <td th:text=" ${element.animalType}"></td>
