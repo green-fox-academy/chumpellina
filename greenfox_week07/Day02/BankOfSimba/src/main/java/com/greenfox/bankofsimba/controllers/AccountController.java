@@ -4,7 +4,6 @@ import com.greenfox.bankofsimba.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +35,7 @@ public class AccountController {
         accounts.add (new BankAccount("Mufasa", 3000.00, "lion", true));
         accounts.add (new BankAccount("Nala", 4000.00, "lion", false));
         model.addAttribute("list", accounts);
+
 
         return "AccountList";
 

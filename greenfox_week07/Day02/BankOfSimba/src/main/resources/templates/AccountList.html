@@ -17,18 +17,20 @@
         <th> Balance </th>
         <th> Animal Type </th>
         <th> Is king? </th>
+        <th> Good or bad </th>
     </tr>
     </thead>
 
     <tbody>
     <th:block th:each = "element : ${list}">
     <tr th:if = ${element.king} class = "king" >
-        <td th:text="${elementStat.index}"> </td>
+        <td th:text="${elementStat.index}"></td>
         <td th:text="${element.name}"> </td>
         <td th:text=" ${element.balance}"></td>
         <td th:text=" ${element.animalType}"></td>
         <td th:text=" ${element.king}"></td>
     </tr>
+
         <tr th:unless = ${element.getKing()}>
             <td th:text="${elementStat.index}"> </td>
             <td th:text="${element.name}"> </td>
