@@ -1,10 +1,5 @@
 package com.greenfoxacademy.helloworld.controllers;
 
-import org.springframework.stereotype.Controller;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-
-
 public class Greeting {
     private long id;
     private String content;
