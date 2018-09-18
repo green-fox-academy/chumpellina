@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank of Simba</title>
+</head>
+
+<body>
+<p>Accounts of the BANK OF SIMBA</p>
+
+<table BORDER=2 FRAME=VOID RULES=ALL>
+    <thead>
+    <tr>
+        <th> Name </th>
+        <th> Balance </th>
+        <th> Animal Type </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <th:block th:each = "element : ${list}">
+    <tr>
+        <td th:text="${element.name}"> </td>
+        <td th:text=" ${element.balance}"></td>
+        <td th:text=" ${element.animalType}"></td>
+    </tr>
+    </th:block>
+    </tbody>
+
+</table>
+</body>
+</html>
