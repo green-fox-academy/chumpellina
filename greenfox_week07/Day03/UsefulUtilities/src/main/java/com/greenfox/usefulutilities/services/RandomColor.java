@@ -24,7 +24,4 @@ public class RandomColor {
         return colors.get(random.nextInt(colors.size()));
     }
 
-    public void validateEmail () {
-
-    }
 }

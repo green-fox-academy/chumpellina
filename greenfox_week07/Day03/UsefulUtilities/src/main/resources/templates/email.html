@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Example</title>
 </head>
 <body>
+<p> In order to validate your email-address, please type in the address bar in the following pattern: /useful/email?email=is@this.valid </p>
 
-<p  th:if = ${valid.check}> Your email is valid </p>
-<p th:if = ${valid.check}> Your email is not valid </p>
-
-<a href="/useful/email?email=is@this.valid"> Email validator  </a>
-
-<form>
-    <h1> HERE WE VALIDATE YOUR EMAIL ADDRESS </h1>
-    <label>
-        EMAIL
-    </label>
-    <div>  <input type = "email" /> </div>
-
-</form>
+<p th:if = ${valid} th:style = "'background-color: green'" th:text ="${email}+ ' --> this input is valid'">  </p>
+<p th:unless = ${valid}  th:style = "'background-color: red'" th:text ="${email}+ ' --> this input is not valid'">  </p>
 
 </body>
 </html>

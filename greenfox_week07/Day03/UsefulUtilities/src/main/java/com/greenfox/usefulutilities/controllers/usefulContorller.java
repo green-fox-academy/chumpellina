@@ -12,9 +12,11 @@ public class usefulContorller{
     private RandomColor randomColor;
     private ValidateEmail validateEmail;
 
-    public usefulContorller(RandomColor randomColor) {
+    public usefulContorller(RandomColor randomColor, ValidateEmail validateEmail) {
         this.randomColor = randomColor;
+        this.validateEmail= validateEmail;
     }
+
 
     @RequestMapping("/useful")
     public String printMain () {
@@ -23,15 +25,17 @@ public class usefulContorller{
     }
 
     @RequestMapping("/useful/colored")
-    public String makeBackground () {
-        randomColor.randomColor();
-        return "useful";
+    public String makeBackground (Model model) {
+        String color = randomColor.randomColor();
+        model.addAttribute("color", color);
+        return "colored";
     }
 
     @RequestMapping("/useful/email")
-    public String goToLinks (@RequestParam("email") String input, Model model) {
+    public String validate (@RequestParam("email") String input, Model model) {
        Boolean valid = validateEmail.check(input);
         model.addAttribute("valid", valid);
+        model.addAttribute("email", input);
         return "email";
     }
 
