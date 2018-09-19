@@ -1,5 +1,8 @@
 package com.greenfox.playingwithcolors.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class RedColor implements MyColor {
     private Printer printer;
 

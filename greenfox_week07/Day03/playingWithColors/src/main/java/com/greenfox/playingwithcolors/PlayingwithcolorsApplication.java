@@ -20,8 +20,8 @@ public class PlayingwithcolorsApplication implements CommandLineRunner {
         this.printer = printer;
     } */
 
-    public PlayingwithcolorsApplication(BlackColor blackColor) {
-        this.myColor = blackColor;
+    public PlayingwithcolorsApplication(MyColor myColor) {
+        this.myColor = myColor;
     }
 
     @Override

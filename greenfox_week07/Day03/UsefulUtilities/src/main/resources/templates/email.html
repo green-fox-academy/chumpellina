@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+
+<p  th:if = ${valid.check}> Your email is valid </p>
+<p th:if = ${valid.check}> Your email is not valid </p>
+
+<a href="/useful/email?email=is@this.valid"> Email validator  </a>
+
+<form>
+    <h1> HERE WE VALIDATE YOUR EMAIL ADDRESS </h1>
+    <label>
+        EMAIL
+    </label>
+    <div>  <input type = "email" /> </div>
+
+</form>
+
+</body>
+</html>
