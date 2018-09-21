@@ -29,13 +29,13 @@
 
 <label> Drink: </label>
 
-<select name = "drink" method = "post" action = "/nutritionStore">
+<select name = "drink" method = "post" action = "/redirect:/?name=">
     <option value="water">Water</option>
     <option value="liquor">Liquor</option>
     <option value="soda">Soda</option>
 </select>
 
-<button type="submit"> Change </button>
+<button type="submit" action="/nutritionStore"> Change </button>
 
 </body>
 </html>

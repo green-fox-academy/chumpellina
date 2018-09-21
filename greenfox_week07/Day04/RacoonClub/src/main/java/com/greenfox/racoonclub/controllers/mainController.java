@@ -43,12 +43,16 @@ public class mainController {
         return "redirect:/?name="+ name;
     }
 
+    @GetMapping("/nutritionStore")
+        public String printBasicNutritionStore() {
+            return "nutritionStore";
+        }
+
     @PostMapping ("/nutritionStore")
-    public String printNutritionStore (@RequestParam("name") String name, String drink, String food, Model model){
+    public String printNutritionStore (@RequestParam("name") String name, String drink, String food){
         Racoon newRacoon = racoonServices.findByName(name);
         newRacoon.setNutrition(drink, food);
         return "redirect:/?name=" + name;
     }
-
 
 }
