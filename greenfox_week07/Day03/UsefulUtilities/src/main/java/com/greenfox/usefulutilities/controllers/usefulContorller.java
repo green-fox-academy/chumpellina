@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class usefulContorller{
-    private RandomColor randomColor;
+  /*  private RandomColor randomColor;
     private ValidateEmail validateEmail;
 
     public usefulContorller(RandomColor randomColor, ValidateEmail validateEmail) {
         this.randomColor = randomColor;
         this.validateEmail= validateEmail;
-    }
+    } */
+
+    ValidateEmail validateEmail = new ValidateEmail();
+    RandomColor randomColor = new RandomColor();
 
 
     @RequestMapping("/useful")

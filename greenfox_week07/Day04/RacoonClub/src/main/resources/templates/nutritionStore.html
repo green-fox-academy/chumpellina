@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition Store</title>
+</head>
+<body>
+<ul>
+    <li>
+        <a href="/information"> Information </a>
+    </li>
+    <li>
+        <a href="/nutritionStore"> Nutrition Store </a>
+    </li>
+    <li>
+        <a href="/trickCenter"> Trick Center </a>
+    </li>
+    <li>
+        <a href="/actionHistory"> Action History </a>
+    </li>
+</ul>
+<label> Food: </label>
+
+<select name = "food" method = "post" action = "/nutritionStore">
+    <option value="garbage">Garbage</option>
+    <option value="stolenGoods">Stolen goods</option>
+    <option value="fruits">Fruits</option>
+</select>
+
+<label> Drink: </label>
+
+<select name = "drink" method = "post" action = "/nutritionStore">
+    <option value="water">Water</option>
+    <option value="liquor">Liquor</option>
+    <option value="soda">Soda</option>
+</select>
+
+<button type="submit"> Change </button>
+
+</body>
+</html>

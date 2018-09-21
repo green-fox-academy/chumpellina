@@ -36,7 +36,6 @@ public class AccountController {
         accounts.add (new BankAccount("Nala", 4000.00, "lion", false));
         model.addAttribute("list", accounts);
 
-
         return "AccountList";
 
     }

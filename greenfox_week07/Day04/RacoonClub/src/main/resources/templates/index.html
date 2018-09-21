@@ -7,14 +7,18 @@
 <body>
 <ul>
     <li>
-        <a href="/information"> Information </a>
+        <a th:href="@{/information?name=} +${name}"> Information site </a>
+    </li>
+    <li>
+        <a th:href="@{/nutritionStore?name=} +${name}"> NutritionStore site </a>
     </li>
 </ul>
 
-<img src="‪src/racoon.jpg">
-<p th:text ="'This is ' + ${name} +'. Currently living on' +  ' and ' +'. He knows ' +' tricks.'">  </p>
+<img src="racoon.jpg">
 
-<h1> Known Tricks </h1>
+<p th:text = "'This is: ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows currently ' + ${trickList} + ' tricks.' " >  </p>
+
+    <h1> Known Tricks </h1>
 <ul>
     <li>
         <p> Trick01 </p>
