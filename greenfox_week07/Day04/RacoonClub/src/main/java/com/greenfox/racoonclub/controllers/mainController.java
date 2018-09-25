@@ -32,7 +32,8 @@ public class mainController {
     }
 
     @GetMapping("/login")
-    public String printGet () {
+    public String printGet (Model model) {
+        model.addAttribute("name", "béla");
         return "login";
     }
 
@@ -49,10 +50,12 @@ public class mainController {
         }
 
     @PostMapping ("/nutritionStore")
-    public String printNutritionStore (@RequestParam("name") String name, String drink, String food){
+    public String printNutritionStore (@RequestParam ("name") String name, @RequestParam("food") String food,@RequestParam("drink") String drink, Model model){
         Racoon newRacoon = racoonServices.findByName(name);
         newRacoon.setNutrition(drink, food);
-        return "redirect:/?name=" + name;
+        model.addAttribute("racoon", newRacoon);
+
+        return "redirect:/index";
     }
 
 }

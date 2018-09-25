@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Nutrition Store</title>
@@ -7,7 +7,7 @@
 <body>
 <ul>
     <li>
-        <a href="/information"> Information </a>
+        <a href="'/information?name=' +${racoon.getName()}"> Information </a>
     </li>
     <li>
         <a href="/nutritionStore"> Nutrition Store </a>
@@ -19,9 +19,11 @@
         <a href="/actionHistory"> Action History </a>
     </li>
 </ul>
+
+<form  method = "post" th:action = "/nutritionStore">
 <label> Food: </label>
 
-<select name = "food" method = "post" action = "/nutritionStore">
+<select name = "food" >
     <option value="garbage">Garbage</option>
     <option value="stolenGoods">Stolen goods</option>
     <option value="fruits">Fruits</option>
@@ -29,13 +31,15 @@
 
 <label> Drink: </label>
 
-<select name = "drink" method = "post" action = "/redirect:/?name=">
+<select name = "drink" >
     <option value="water">Water</option>
     <option value="liquor">Liquor</option>
     <option value="soda">Soda</option>
 </select>
 
-<button type="submit" action="/nutritionStore"> Change </button>
+<button type="submit" action="/index"> Change </button>
+
+</form>
 
 </body>
 </html>
