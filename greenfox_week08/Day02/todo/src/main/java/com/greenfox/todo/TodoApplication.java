@@ -1,5 +1,6 @@
 package com.greenfox.todo;
 
+import com.greenfox.todo.models.Todo;
 import com.greenfox.todo.models.User;
 import com.greenfox.todo.repositories.TodoRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -8,10 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class TodoApplication implements CommandLineRunner {
-    private TodoRepository userRepository;
+    TodoRepository todoRepository;
+    Todo todo= new Todo("vegyél delfint", false, false);
+    Todo todo2= new Todo("mennyél kocsmázni", false, false);
+    Todo todo3= new Todo("utazz el a Holdra", false, false);
+    Todo todo4= new Todo("legyél felelősségteljes", false, false);
 
-    public TodoApplication(TodoRepository userRepository) {
-        this.userRepository = userRepository;
+    public TodoApplication(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
     }
 
     public static void main(String[] args) {
@@ -20,10 +25,9 @@ public class TodoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        User user = new User();
-        user.setUsername("chumpellina");
-        user.setAge(30);
-
-        userRepository.save(user);
+        todoRepository.save(todo);
+        todoRepository.save(todo2);
+        todoRepository.save(todo3);
+        todoRepository.save(todo4);
     }
 }
