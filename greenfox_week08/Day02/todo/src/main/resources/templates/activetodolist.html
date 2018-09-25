@@ -20,10 +20,10 @@
 
     <tbody>
     <tr th:each="element : ${todos}">
-        <td th:text="${element.id}" > </td>
-        <td th:text="${element.title}"> </td>
-        <td th:text="${element.urgent}"> </td>
-        <td th:text="${element.done}"> </td>
+        <td th:if = "${element.done == !isActive}" th:text="${element.id}" > </td>
+        <td th:if = "${element.done == !isActive}" th:text="${element.title}"> </td>
+        <td th:if = "${element.done == !isActive}" th:text="${element.urgent}"> </td>
+        <td th:if = "${element.done == !isActive}" th:text="${element.done}"> </td>
     </tbody>
 </table>
 
