@@ -17,6 +17,8 @@
         <th> Action </th>
         <th> Urgent </th>
         <th> Done </th>
+        <th> Delete </th>
+        <th> Edit </th>
     </tr>
     </thead>
 
@@ -26,6 +28,9 @@
         <td th:text="${element.title}"> </td>
         <td th:text="${element.urgent}"> </td>
         <td th:text="${element.done}"> </td>
+        <td ><form method="post" th:action="@{'/' + ${element.id} + '/delete'}"> <button> Delete </button> </form></td>
+        <td ><form method="post" th:action="@{/edit}"> <button> Edit </button> </form></td>
+
     </tbody>
 </table>
 

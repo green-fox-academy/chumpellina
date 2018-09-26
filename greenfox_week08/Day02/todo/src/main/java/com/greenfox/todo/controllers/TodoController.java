@@ -16,7 +16,7 @@ public class TodoController {
         this.todoRepository = todoRepository;
     }
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"/"})
     public String list(Model model) {
         model.addAttribute("todos", todoRepository.findAll());
         return "todolist";
@@ -39,6 +39,17 @@ public class TodoController {
         Todo todo = new Todo(name);
         todoRepository.save(todo);
         return "redirect:/";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String delete ( @PathVariable long id){
+        todoRepository.deleteById(id);
+        return"redirect:/";
+    }
+
+    @PostMapping ("/edit")
+    public String edit () {
+        return "todoedit";
     }
 
 
