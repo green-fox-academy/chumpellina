@@ -6,7 +6,18 @@
 </head>
 
 <body>
+
+<form method="get" th:action="@{/search}">
+    <label>
+        Search:
+    </label>
+    <input type="text" name="search">
+    <button type="submit"> Search</button>
+</form>
+
 <a th:href="@{/todo/add}"> Add new todo </a>
+
+<a th:href="@{/todo/listOfAssignees}"> List of Assignees </a>
 
 <h1> Todos for today: </h1>
 <table BORDER=2 FRAME=VOID RULES=ALL>

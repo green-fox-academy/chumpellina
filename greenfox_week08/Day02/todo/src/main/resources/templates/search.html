@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+
+<ul th:each= "element : ${findings}">
+    <li th:text="${element.id} +' - '+ ${element.title}+ ' - ' + ${element.done}+' - '+ ${element.urgent}"> </li>
+</ul>
+
+<a th:href="@{/}"> Return to the list </a>
+
+</body>
+</html>

@@ -52,5 +52,10 @@ public class TodoController {
         return "todoedit";
     }
 
+    @GetMapping("/search")
+    public String search (Model model, String search) {
 
+        model.addAttribute("findings", todoRepository.findAllByTitle(search));
+        return "search";
+    }
 }
