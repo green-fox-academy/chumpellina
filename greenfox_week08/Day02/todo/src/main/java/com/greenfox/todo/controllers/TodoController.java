@@ -1,11 +1,13 @@
 package com.greenfox.todo.controllers;
 
+import com.greenfox.todo.models.Assignee;
 import com.greenfox.todo.models.Todo;
 import com.greenfox.todo.repositories.TodoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -57,5 +59,10 @@ public class TodoController {
 
         model.addAttribute("findings", todoRepository.findAllByTitle(search));
         return "search";
+    }
+
+    @GetMapping("/assignee")
+    public String assigneeLister (Model model, String name) {
+        return "assigneelist";
     }
 }

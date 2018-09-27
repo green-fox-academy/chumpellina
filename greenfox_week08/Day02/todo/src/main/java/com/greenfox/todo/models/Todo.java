@@ -1,11 +1,9 @@
 package com.greenfox.todo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+
 public class Todo {
 
     @Id
@@ -19,6 +17,10 @@ public class Todo {
         this.urgent = false;
         this.done = false;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "Assignee.id")
+    Assignee assegnee;
 
     private boolean done = false;
 

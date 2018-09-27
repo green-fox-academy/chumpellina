@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<ul th:each= "element : ${findings}">
+<ul th:each= "element : ${}">
     <li th:text="${element.id} +' - '+ ${element.title}+ ' - ' + ${element.done}+' - '+ ${element.urgent}"> </li>
 </ul>
 
