@@ -5,6 +5,7 @@ import com.greenfox.reddit.repositories.PostRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostService {
@@ -18,8 +19,18 @@ public class PostService {
         return postRepository.findAll();
     }
 
-   /* public Iterable <Post> add( String title, String link){
-        return postRepository.save(title, link); */
+    public void add(String title, String link) {
+        postRepository.save(new Post (title, link));
+
     }
+    public Post findById (Long id){
+        Optional<Post> myPost = postRepository.findById(id);
+        if (myPost.isPresent()==true){
+           return myPost.get();
+        }
+        else throw new IllegalArgumentException();
+    }
+
+}
 
 

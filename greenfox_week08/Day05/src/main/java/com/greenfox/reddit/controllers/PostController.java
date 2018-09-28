@@ -26,14 +26,30 @@ public class PostController {
         return "main";
     }
 
-  /* @GetMapping("/reddit/add")
-    public String main (){
+    @GetMapping("/reddit/add")
+    public String main() {
         return "adder";
     }
-    @PostMapping("/reddit/add")
-    public String adder (@RequestParam String title, String link){
-    Iterable<Post> postList = postService.add (title, link);
-    return "redirect:/reddit";
-    } */
 
+    @PostMapping("/reddit/add")
+    public String postAdder(@RequestParam String title, String link) {
+        postService.add(title, link);
+        return "redirect:/reddit/add";
+    }
+
+    @PostMapping("/reddit/pluscounter")
+    public String adder(@RequestParam Long id, String name) {
+        Post myPost = postService.findById(id);
+        myPost.setScore(myPost.getScore() + 1);
+        return "redirect:/reddit";
+    }
+
+    @PostMapping("/reddit/minuscounter")
+    public String substract(@RequestParam Long id, String name) {
+        Post myPost = postService.findById(id);
+        myPost.setScore(myPost.getScore() - 1);
+        return "redirect:/reddit";
+    }
 }
+
+

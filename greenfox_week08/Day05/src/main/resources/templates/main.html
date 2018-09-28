@@ -13,20 +13,21 @@
     <tr th:each="element : ${posts}">
         <td th:text="${element.score}" > </td>
         <td>
-            <form method="post" th:action="@{'/add}" >
+            <form method="post" th:action="@{/reddit/pluscounter}" >
                 <a th:text="+", name="plus"></a>
             </form>
         </td>
         <td>
-            <form method="post" th:action="@{'/add}" >
+            <form method="post" th:action="@{/reddit/minuscounter}" >
                 <a th:text="-", name="minus"></a>
             </form>
         </td>
         <td >
-            <form method="post" th:action="@{'/' + ${element.link}}" >
+            <form method="post" th:action="@{/reddit}" >
                 <a th:text="${element.title}"> </a>
             </form>
         </td>
+    </tr>
 
     </tbody>
 </table>

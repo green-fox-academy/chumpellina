@@ -6,12 +6,18 @@
 </head>
 <body>
 <h1> Submit a new post </h1>
-<form th:action="/reddit/add" th:method = "post">
-    <label> Title </label>
-    <input type="submit" name="title">
-    <label> URL </label>
-    <input type="submit" name="link">
-    <button type="submit">Submit</button>
+<form th:action="/reddit/add" method = "post">
+    <div>
+    <label> Title: </label>
+     <input type="text" name="title"/>
+    </div>
+    <div>
+    <label> URL: </label>
+    <input type="text" name="link"/>
+    </div>
+
+    <form method="post" th:action="@{/reddit/add}"> <button> Submit </button> </form>
+
 </form>
 </body>
 </html>

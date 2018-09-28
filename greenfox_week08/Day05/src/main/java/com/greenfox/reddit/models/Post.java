@@ -24,12 +24,11 @@ public class Post {
         this.id = id;
     }
 
-
     public int getScore() {
         return score;
     }
 
-    public void setRank(int score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
@@ -55,12 +54,5 @@ public class Post {
     }
 
     public Post() {
-    }
-
-    public Post(Long id, int score, String link, String title) {
-        this.id = id;
-        this.score = score;
-        this.link = link;
-        this.title = title;
     }
 }

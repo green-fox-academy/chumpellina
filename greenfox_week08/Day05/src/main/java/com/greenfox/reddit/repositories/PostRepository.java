@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {
     List<Post> findAllByTitle(String title);
-   /* List <Post> save (String tile, String link); */
+
 }
