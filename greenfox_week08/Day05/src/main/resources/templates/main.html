@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit</title>
+</head>
+<body>
+<a th:href="@{/reddit/add}"> Submit new post </a>
+<h1> Trending posts </h1>
+
+<table BORDER=5 FRAME=VOID >
+    <tbody>
+    <tr th:each="element : ${posts}">
+        <td th:text="${element.rank}" > </td>
+        <td>
+            <form method="post" th:action="@{'/add}" >
+            <a th:text="+", name="plus"></a>
+            </form>
+        </td>
+        <td>
+            <form method="post" th:action="@{'/add}" >
+                <a th:text="-", name="minus"></a>
+            </form>
+        </td>
+        <td >
+            <form method="post" th:action="@{'/' + ${element.link}}" >
+                <a th:text="${element.link}"> </a>
+             </form>
+        </td>
+
+    </tbody>
+</table>
+
+</body>
+</html>
