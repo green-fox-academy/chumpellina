@@ -8,14 +8,13 @@
 <body>
 <a th:href="@{/reddit/add}"> Submit new post </a>
 <h1> Trending posts </h1>
-
 <table BORDER=5 FRAME=VOID >
     <tbody>
     <tr th:each="element : ${posts}">
-        <td th:text="${element.rank}" > </td>
+        <td th:text="${element.score}" > </td>
         <td>
             <form method="post" th:action="@{'/add}" >
-            <a th:text="+", name="plus"></a>
+                <a th:text="+", name="plus"></a>
             </form>
         </td>
         <td>
@@ -25,8 +24,8 @@
         </td>
         <td >
             <form method="post" th:action="@{'/' + ${element.link}}" >
-                <a th:text="${element.link}"> </a>
-             </form>
+                <a th:text="${element.title}"> </a>
+            </form>
         </td>
 
     </tbody>

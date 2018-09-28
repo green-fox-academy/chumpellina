@@ -1,16 +1,36 @@
 package com.greenfox.reddit.models;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Post {
-    private int rank;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private int score;
     private String link;
     private String title;
 
-    public int getRank() {
-        return rank;
+    public Long getId() {
+        return id;
     }
 
-    public void setRank(int rank) {
-        this.rank = rank;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setRank(int score) {
+        this.score = score;
     }
 
     public String getLink() {
@@ -35,5 +55,12 @@ public class Post {
     }
 
     public Post() {
+    }
+
+    public Post(Long id, int score, String link, String title) {
+        this.id = id;
+        this.score = score;
+        this.link = link;
+        this.title = title;
     }
 }
