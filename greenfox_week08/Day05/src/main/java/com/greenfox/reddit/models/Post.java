@@ -48,9 +48,9 @@ public class Post {
         this.title = title;
     }
 
-    public Post(String link, String title) {
-        this.link = link;
+    public Post( String title, String link) {
         this.title = title;
+        this.link = link;
     }
 
     public Post() {

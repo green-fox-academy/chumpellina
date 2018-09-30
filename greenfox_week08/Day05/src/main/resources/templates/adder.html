@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1> Submit a new post </h1>
-<form th:action="/reddit/add" method = "post">
+<form th:action="@{/reddit/add}" method = "post">
     <div>
     <label> Title: </label>
      <input type="text" name="title"/>

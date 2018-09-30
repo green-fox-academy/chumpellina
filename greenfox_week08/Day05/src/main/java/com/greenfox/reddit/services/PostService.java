@@ -20,17 +20,31 @@ public class PostService {
     }
 
     public void add(String title, String link) {
-        postRepository.save(new Post (title, link));
+        postRepository.save(new Post(title, link));
 
     }
-    public Post findById (Long id){
+
+    public Post findById(Long id) {
         Optional<Post> myPost = postRepository.findById(id);
-        if (myPost.isPresent()==true){
-           return myPost.get();
-        }
-        else throw new IllegalArgumentException();
+        if (myPost.isPresent() == true) {
+            return myPost.get();
+        } else throw new IllegalArgumentException();
     }
 
+    public void addOne(Long id) {
+        Optional<Post> myPost = postRepository.findById(id);
+        if (myPost.isPresent() == true) {
+            myPost.get().setScore(myPost.get().getScore() + 1);
+        } else throw new IllegalArgumentException();
+
+    }
+    public void minusOne(Long id) {
+        Optional<Post> myPost = postRepository.findById(id);
+        if (myPost.isPresent() == true) {
+            myPost.get().setScore(myPost.get().getScore() -1);
+        } else throw new IllegalArgumentException();
+
+    }
 }
 
 

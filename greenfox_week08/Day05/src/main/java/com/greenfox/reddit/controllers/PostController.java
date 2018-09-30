@@ -6,6 +6,7 @@ import com.greenfox.reddit.services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,20 +35,18 @@ public class PostController {
     @PostMapping("/reddit/add")
     public String postAdder(@RequestParam String title, String link) {
         postService.add(title, link);
-        return "redirect:/reddit/add";
-    }
-
-    @PostMapping("/reddit/pluscounter")
-    public String adder(@RequestParam Long id, String name) {
-        Post myPost = postService.findById(id);
-        myPost.setScore(myPost.getScore() + 1);
         return "redirect:/reddit";
     }
 
-    @PostMapping("/reddit/minuscounter")
-    public String substract(@RequestParam Long id, String name) {
-        Post myPost = postService.findById(id);
-        myPost.setScore(myPost.getScore() - 1);
+    @PostMapping("/reddit/pluscounter/{id}")
+    public String adder(@PathVariable Long id) {
+        postService.addOne(id);
+        return "redirect:/reddit";
+    }
+
+    @PostMapping("/reddit/minuscounter/{id}")
+    public String substract(@PathVariable Long id) {
+        postService.minusOne(id);
         return "redirect:/reddit";
     }
 }
