@@ -19,7 +19,7 @@ public class DoUntilController {
         }
         else if (action.equals("factor")){
             int sum = 1;
-            for (int i = 0; i < until.getUntil(); i++) {
+            for (int i = 1; i <= until.getUntil(); i++) {
                 sum = sum *i;
                 myNumber.setResult(sum);
             }
