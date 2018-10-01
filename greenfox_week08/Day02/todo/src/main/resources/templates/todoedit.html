@@ -8,8 +8,20 @@
 <body>
 <h1> Edit Todo </h1>
 <form th:action="" method="post" >
-    <label>Todo Description: </label>
-    <input type="text" name="content">
+    <div>
+        <label>Todo Description: </label>
+        <input type="text" name="content"> </div>
+    <div>
+        <label>Urgent </label>
+        <input type="checkbox" name="urgent" th:checked="${urgent}" />
+    </div>
+    <div>
+        <label>Done </label>
+        <input type="checkbox" name="done" th:checked="${done}" />
+    </div>
+
+    <button type="submit">Submit</button>
+    <a href="/todo"> Cancel </a>
 </form>
 
 </body>

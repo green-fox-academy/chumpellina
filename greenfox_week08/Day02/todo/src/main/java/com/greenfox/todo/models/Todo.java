@@ -9,6 +9,7 @@ public class Todo {
     private Long id;
     private String title;
     private boolean urgent = false;
+    private boolean done = false;
 
     public Todo(String title) {
         this.title = title;
@@ -20,7 +21,7 @@ public class Todo {
     @JoinColumn(name = "Assignee.id")
     Assignee assegnee;
 
-    private boolean done = false;
+
 
     public Long getId() {
         return id;
