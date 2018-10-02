@@ -13,18 +13,18 @@
     <tr th:each="element : ${posts}">
         <td th:text="${element.score}" > </td>
         <td>
-            <form method="post" th:action="@{|/reddit/pluscounter/${id}|}" >
+            <form method="post" th:action="@{|/reddit/pluscounter/${element.id}|}" >
                 <button name="plus" type="submit"> + </button>
             </form>
         </td>
         <td>
-            <form method="post" th:action="@{|/reddit/minuscounter/${id}|}" >
+            <form method="post" th:action="@{|${element.id}|}" >
                 <button name="minus" type="submit"> - </button>
             </form>
         </td>
         <td >
             <form method="post" th:action="@{/reddit}" >
-                <a th:text="${element.title}"> </a>
+                <a th:text="${element.title}" th:href="${element.link}"> </a>
             </form>
         </td>
     </tr>

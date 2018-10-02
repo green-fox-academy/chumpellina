@@ -38,7 +38,8 @@ public class DoubleController {
             this.error = error;
         }
 
-        public Output() {
+        public int getResult() {
+            return result;
         }
     }
 }

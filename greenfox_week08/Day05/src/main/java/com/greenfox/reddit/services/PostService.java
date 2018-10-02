@@ -21,7 +21,6 @@ public class PostService {
 
     public void add(String title, String link) {
         postRepository.save(new Post(title, link));
-
     }
 
     public Post findById(Long id) {
@@ -34,14 +33,18 @@ public class PostService {
     public void addOne(Long id) {
         Optional<Post> myPost = postRepository.findById(id);
         if (myPost.isPresent() == true) {
-            myPost.get().setScore(myPost.get().getScore() + 1);
+            Post myActualPost = myPost.get();
+            myActualPost.setScore(myActualPost.getScore() + 1);
+            postRepository.save(myActualPost);
         } else throw new IllegalArgumentException();
-
     }
+
     public void minusOne(Long id) {
         Optional<Post> myPost = postRepository.findById(id);
         if (myPost.isPresent() == true) {
-            myPost.get().setScore(myPost.get().getScore() -1);
+            Post myActualPost = myPost.get();
+            myActualPost.setScore(myActualPost.getScore() -1);
+            postRepository.save(myActualPost);
         } else throw new IllegalArgumentException();
 
     }
